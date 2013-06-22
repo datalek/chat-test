@@ -2,18 +2,22 @@ package controllers
 
 import play.api._
 import play.api.mvc._
-
+import play.api.data._
+import play.api.data.Forms._
 import play.api.libs.json._
 import play.api.libs.iteratee._
-
 import models._
 import models.chat._
 import models.users._
-
 import akka.actor._
 import scala.concurrent.duration._
 
+
 object Application extends Controller {
+  
+  var discussionForm = Form(
+		  "name_discussion" -> nonEmptyText
+  )
   
   /**
    * Just display the home page.
@@ -26,30 +30,20 @@ object Application extends Controller {
   
   def about = TODO
   
-  /*
-   /**
-   * Display the chat room page.
-   */
-  def chatRoom(username: Option[String]) = Action { implicit request =>
-    System.out.println("(chatRoom) Username" + username);
-    username.filterNot(_.isEmpty).map { username =>
-      Ok(views.html.chatRoom(username))
-    }.getOrElse {
-      Redirect(routes.Application.index).flashing(
-        "error" -> "Please choose a valid username."
-      )
-    }
+  def room = Action { implicit request =>
+    Ok(views.html.room(Option(""),List("uno", "due"), discussionForm))
   }
   
-  /**
-   * Handles the chat websocket.
-   */
-  def chat(username: String) = WebSocket.async[JsValue] { request  =>
-
-    ChatRoom.join(username)
+  def newDiscussion = Action{ implicit request =>
+    discussionForm.bindFromRequest.fold(
+    		errors => BadRequest(views.html.room(Option(""),List("uno", "due"), errors)),
+    		name_discussion => {
+    		  Ok(name_discussion)
+    		}
+    )
     
   }
- */
+  
   def chatRoomAkka(username: Option[String]) = Action { implicit request =>
     System.out.println("(chatRoomAkka) Username" + username);
     username.filterNot(_.isEmpty()).map { username =>

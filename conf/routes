@@ -8,6 +8,8 @@ GET		/rooms						controllers.Application.rooms
 GET 	/about						controllers.Application.about
 GET     /roomAkka                   controllers.Application.chatRoomAkka(username: Option[String] ?= None)
 GET     /roomAkka/chatAkka          controllers.Application.chatAkka(username)
+GET		/room						controllers.Application.room
+POST	/room						controllers.Application.newDiscussion
 GET		/room/:conversation/:username	controllers.Application.chatRoom(conversation: String, username: String)
 GET		/room/:conversation/:username/chat	controllers.Application.chat(conversation, username)
 #GET     /room                       controllers.Application.chatRoom(username: Option[String] ?= None)

@@ -1,0 +1,41 @@
+@(user: Option[String], discussions: List[String], discussionForm: Form[String])()(implicit flash: Flash)
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Conversazioni")(views.html.navbar.navbar(user)) {
+    
+    @flash.get("error").map { errorMessage =>
+        <div class="alert-message error">
+            <p>
+                <strong>Oops!</strong> @errorMessage
+            </p>
+        </div>   
+    }
+    <div>
+    	<h1>Crea una conversazione!</h1>
+    	@form(routes.Application.newDiscussion){
+    		@inputText(discussionForm("name_discussion"), '_label -> "Nome Discussione")
+    		<input type="submit" class="btn btn-success" value="Crea!">
+    	}
+    </div>
+    <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nome discussione</th>
+                  <!--th>Numero partecipanti</th-->
+                </tr>
+              </thead>
+              <tbody>
+              @for(i <- 0 until discussions.length){
+              	<tr>
+                  <td>@(i+1)</td>
+                  <td>@discussions(i)</td>
+                </tr>
+              }
+                
+              </tbody>
+            </table>
+    
+}
