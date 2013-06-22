@@ -1,0 +1,48 @@
+@(username: Option[String])
+		<div class="navbar navbar-inverse">
+		  <div class="navbar-inner">
+		    <div class="container">
+		      <a class="brand" href="#">RealTime!</a>
+		      <div class="nav-collapse collapse navbar-inverse-collapse">
+		        <ul class="nav">
+		        	<li class="divider-vertical"></li>
+		          <li class="active"><a href="@routes.Application.index">Home</a></li>
+		          <li class="divider-vertical"></li>
+		          <li><a href="@routes.Application.rooms">Rooms</a></li>
+		          <li class="divider-vertical"></li>
+		          <li><a href="@routes.Application.about">AboutUs</a></li>
+		          <li class="divider-vertical"></li>
+		        </ul>
+		        <!--form class="navbar-search pull-left" action="">
+		          <input type="text" class="search-query span2" placeholder="Search">
+		        </form-->
+		        <ul class="nav pull-right">
+		          <li class="divider-vertical"></li>
+		          @username match {
+		          	case Some(username) => {
+		          		<li class="dropdown">
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@username<b class="caret"></b></a>
+				            <ul class="dropdown-menu">
+				              <li><a href="#">Profile</a></li>
+				              <li><a href="#">Friends</a></li>
+				              <li class="divider"></li>
+				              <li><a href="#">logout</a></li>
+				            </ul>
+				          </li>
+		          	}
+		          	case None => {
+		          		<li class="dropdown">
+			          		<form class="form-search" action="@routes.Application.chatRoomAkka()">
+										  <input type="text" name="username" class="input-medium search-query" placeholder="Username">
+										  <button type="submit" class="btn">login</button>
+										</form>
+				            <!--a href="#" id="btn-login">Login</a-->
+				          </li>
+		          	}
+		          }
+		          
+		        </ul>
+		      </div><!-- /.nav-collapse -->
+		    </div>
+		  </div><!-- /navbar-inner -->
+		</div>

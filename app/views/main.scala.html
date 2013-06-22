@@ -1,0 +1,37 @@
+@(title: String)(navbar: Html)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>@title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <!-- Bootstrap -->
+    <link href="@routes.Assets.at("stylesheets/bootstrap.min.css")" rel="stylesheet" type="stylesheet/css">
+    <link href="@routes.Assets.at("stylesheets/bootstrap-responsive.min.css")" rel="stylesheet" type="stylesheet/css">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/glyphicons-halflings-white.png")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/glyphicons-halflings.png")">
+    <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    
+  </head>
+  <body>
+  <div class="wrapper">
+  	<div id="navbar">
+  		@navbar
+  	</div>
+  	
+  	<div id="main-content">
+    	@content
+    </div>
+    <div class="push"><!--//--></div>
+  </div>
+  <footer>
+  	<div class="container">
+      <p>Put together in less than five minutes by <a href="http://www.martinbean.co.uk/" rel="author">Martin Bean</a>. Uses <a href="http://twitter.github.com/bootstrap/" rel="external">Twitter Bootstrap</a> and <a href="http://ryanfait.com/sticky-footer/" rel="external">Ryan Fait&rsquo;s Sticky Footer</a>.</p>
+    </div>
+  </footer>
+    
+    <!--script src="@routes.Assets.at("javascripts/jquery-1.10.1.js")" type="text/javascript"></script-->
+    <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+  </body>
+</html>

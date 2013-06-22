@@ -1,0 +1,19 @@
+@(user: Option[String])()(implicit flash: Flash)
+
+@main("Home")(views.html.navbar.navbar(user)) {
+    
+    @flash.get("error").map { errorMessage =>
+        <div class="alert-message error">
+            <p>
+                <strong>Oops!</strong> @errorMessage
+            </p>
+        </div>   
+    }
+    <div class="alert alert-info">
+        <p>
+            <strong>Thi is the Play 2.0 Websocket sample application!</strong> 
+            To start, choose a username and sign in using the top right form.
+        </p>
+    </div>
+    
+}

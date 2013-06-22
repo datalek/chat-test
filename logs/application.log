@@ -1,0 +1,174 @@
+2013-06-22 11:48:45,613 - [INFO] - from play in main 
+Listening for HTTP on /0.0.0.0:9000
+
+2013-06-22 13:43:55,925 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 13:44:01,239 - [INFO] - from akka.event.slf4j.Slf4jEventHandler in play-akka.actor.default-dispatcher-3 
+Slf4jEventHandler started
+
+2013-06-22 13:44:58,603 - [INFO] - from akka.event.slf4j.Slf4jEventHandler in application-akka.actor.default-dispatcher-5 
+Slf4jEventHandler started
+
+2013-06-22 13:44:58,665 - [INFO] - from play in New I/O worker #2 
+Starting application default Akka system.
+
+2013-06-22 13:51:08,205 - [INFO] - from play in New I/O worker #3 
+Shutdown application default Akka system.
+
+2013-06-22 13:51:08,567 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 13:51:11,395 - [INFO] - from akka.event.slf4j.Slf4jEventHandler in application-akka.actor.default-dispatcher-4 
+Slf4jEventHandler started
+
+2013-06-22 13:51:11,396 - [INFO] - from play in New I/O worker #1 
+Starting application default Akka system.
+
+2013-06-22 15:56:28,291 - [INFO] - from play in New I/O worker #4 
+Shutdown application default Akka system.
+
+2013-06-22 15:56:28,455 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 15:58:06,461 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 15:58:07,006 - [INFO] - from akka.event.slf4j.Slf4jEventHandler in application-akka.actor.default-dispatcher-3 
+Slf4jEventHandler started
+
+2013-06-22 15:58:07,007 - [INFO] - from play in New I/O worker #3 
+Starting application default Akka system.
+
+2013-06-22 15:59:09,362 - [INFO] - from play in New I/O worker #3 
+Shutdown application default Akka system.
+
+2013-06-22 15:59:09,455 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 15:59:39,358 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 16:00:00,950 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 16:00:59,903 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 16:15:00,978 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 16:16:22,423 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 16:20:14,244 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 16:22:11,666 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 16:23:17,363 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 16:28:30,185 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 16:29:02,951 - [INFO] - from akka.event.slf4j.Slf4jEventHandler in application-akka.actor.default-dispatcher-3 
+Slf4jEventHandler started
+
+2013-06-22 16:29:02,953 - [INFO] - from play in New I/O worker #4 
+Starting application default Akka system.
+
+2013-06-22 16:31:53,309 - [INFO] - from play in New I/O worker #4 
+Shutdown application default Akka system.
+
+2013-06-22 16:31:53,428 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 16:35:48,492 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 16:37:07,984 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 16:37:43,966 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 16:38:47,166 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 16:40:57,670 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 16:45:29,107 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 16:51:28,465 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 16:53:30,959 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 17:00:04,626 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 17:00:59,886 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 17:02:31,821 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 17:03:04,437 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 17:03:44,884 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 17:04:10,146 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 17:05:05,999 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 17:15:31,882 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 17:17:05,953 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 17:19:40,684 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 17:21:43,556 - [INFO] - from play in New I/O worker #3 
+Application started (Dev)
+
+2013-06-22 17:22:03,158 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 17:22:53,732 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+
+2013-06-22 17:41:00,442 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 17:46:00,127 - [INFO] - from play in New I/O worker #4 
+Application started (Dev)
+
+2013-06-22 17:46:00,366 - [INFO] - from akka.event.slf4j.Slf4jEventHandler in application-akka.actor.default-dispatcher-4 
+Slf4jEventHandler started
+
+2013-06-22 17:46:00,368 - [INFO] - from play in New I/O worker #2 
+Starting application default Akka system.
+
+2013-06-22 17:48:43,505 - [INFO] - from play in New I/O worker #2 
+Shutdown application default Akka system.
+
+2013-06-22 17:48:43,589 - [INFO] - from play in New I/O worker #2 
+Application started (Dev)
+
+2013-06-22 17:48:43,788 - [INFO] - from Place in PlaceSystem-akka.actor.default-dispatcher-6 
+{"kind":"join","user":"fulvio","message":"has entered the conversation","members":["fulvio"]}
+
+2013-06-22 17:48:48,912 - [INFO] - from Place in iteratee-execution-context-2 
+{"kind":"talk","user":"fulvio","message":"hello","members":["fulvio"]}
+

@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET		/rooms						controllers.Application.rooms
+GET 	/about						controllers.Application.about
+GET     /roomAkka                   controllers.Application.chatRoomAkka(username: Option[String] ?= None)
+GET     /roomAkka/chatAkka          controllers.Application.chatAkka(username)
+GET		/room/:conversation/:username	controllers.Application.chatRoom(conversation: String, username: String)
+GET		/room/:conversation/:username/chat	controllers.Application.chat(conversation, username)
+#GET     /room                       controllers.Application.chatRoom(username: Option[String] ?= None)
+#GET     /room/chat                  controllers.Application.chat(username)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
