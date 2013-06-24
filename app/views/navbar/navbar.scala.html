@@ -26,13 +26,13 @@
 				              <li><a href="#">Profile</a></li>
 				              <li><a href="#">Friends</a></li>
 				              <li class="divider"></li>
-				              <li><a href="#">logout</a></li>
+				              <li><a href="@routes.Application.logout">logout</a></li>
 				            </ul>
 				          </li>
 		          	}
 		          	case None => {
 		          		<li class="dropdown">
-			          		<form class="form-search" action="@routes.Application.chatRoomAkka()">
+			          		<form class="form-search" action="@routes.Application.login()">
 										  <input type="text" name="username" class="input-medium search-query" placeholder="Username">
 										  <button type="submit" class="btn">login</button>
 										</form>

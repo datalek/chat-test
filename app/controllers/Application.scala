@@ -23,7 +23,24 @@ object Application extends Controller {
    * Just display the home page.
    */
   def index = Action { implicit request =>
-    Ok(views.html.index(None))
+    request.session.get("username").map { user =>
+     Ok(views.html.index(Some(user)))
+    }.getOrElse {
+    	Ok(views.html.index(None))
+    }
+  }
+  
+  def login(username: Option[String]) = Action { implicit request =>
+    username.filterNot(_.isEmpty()).map { username =>
+      Redirect(routes.Application.index).withSession("username" -> username)
+    }.getOrElse {
+      Redirect(routes.Application.index).flashing("error" -> "Plean choose a valid username!")
+    }
+  }
+  
+  def logout = Action{ implicit request =>
+    Redirect(routes.Application.index).withSession(session - "username")
+    
   }
   
   def rooms = TODO
@@ -31,21 +48,27 @@ object Application extends Controller {
   def about = TODO
   
   def room = Action { implicit request =>
-    Ok(views.html.room(Option(""),List("uno", "due"), discussionForm))
+    request.session.get("username").map { user =>
+     Ok(views.html.room(Option(user),Place.conversations.toList, discussionForm))
+    }.getOrElse {
+    	Redirect(routes.Application.index).flashing("error" -> "Plean choose a username!")
+    }
   }
   
   def newDiscussion = Action{ implicit request =>
-    discussionForm.bindFromRequest.fold(
-    		errors => BadRequest(views.html.room(Option(""),List("uno", "due"), errors)),
+    request.session.get("username").map { user =>
+     	discussionForm.bindFromRequest.fold(
+    		errors => BadRequest(views.html.room(Option(user),Place.conversations.toList, errors)),
     		name_discussion => {
-    		  Ok(name_discussion)
+    		  Redirect(routes.Application.chatRoom(name_discussion, user))
     		}
-    )
-    
+     	)
+    }.getOrElse {
+    	Redirect(routes.Application.index).flashing("error" -> "Plean choose a username!")
+    }  
   }
   
   def chatRoomAkka(username: Option[String]) = Action { implicit request =>
-    System.out.println("(chatRoomAkka) Username" + username);
     username.filterNot(_.isEmpty()).map { username =>
       Ok(views.html.chatRoomAkka(username))
     }.getOrElse {
@@ -54,7 +77,6 @@ object Application extends Controller {
   }
   
   def chatAkka(username: String) = WebSocket.async[JsValue] { request =>
-    System.out.println("chatAkka socket");
     ChatRoomAkka.join(username);
   }
   

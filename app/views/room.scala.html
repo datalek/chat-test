@@ -1,4 +1,4 @@
-@(user: Option[String], discussions: List[String], discussionForm: Form[String])()(implicit flash: Flash)
+@(user: Option[String], discussions: List[(String, Int)], discussionForm: Form[String])()(implicit flash: Flash)
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -31,7 +31,7 @@
               @for(i <- 0 until discussions.length){
               	<tr>
                   <td>@(i+1)</td>
-                  <td>@discussions(i)</td>
+                  <td><a href="@routes.Application.chatRoom(discussions(i)._1, user.get)">@discussions(i)._1</a></td>
                 </tr>
               }
                 
