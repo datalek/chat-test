@@ -16,7 +16,8 @@ GET		/room/:conversation/:username	controllers.Application.chatRoom(conversation
 GET		/room/:conversation/:username/chat	controllers.Application.chat(conversation, username)
 #GET     /room                       controllers.Application.chatRoom(username: Option[String] ?= None)
 #GET     /room/chat                  controllers.Application.chat(username)
-GET		/test						controllers.Application.example
+GET		/test0						controllers.Application.example0
+GET		/test1						controllers.Application.example1
 
 
 

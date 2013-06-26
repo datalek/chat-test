@@ -111,12 +111,16 @@ object Application extends Controller {
   def example1 = Action {
      // Make 3 sequential async calls
     Logger.info("Before All")
+    val responseFuture1 = {Logger.info("Before google");val a = WS.url("http://google.com").get();Logger.info("After google");a}
+    val responseFuture2 = {Logger.info("Before yahoo");val a = WS.url("http://yahoo.com").get();Logger.info("After yahoo");a}
+    val responseFuture3 = {Logger.info("Before merda");val a = WS.url("http://merda.com").get();Logger.info("After merda");a}
     val resultFuture = for {
- 		foo <- WS.url("http://google.com").get()
- 		bar <- WS.url("http://yahoo.com").get()
- 		baz <- WS.url("http://merda.com").get()
+ 		foo <- responseFuture1
+ 		bar <- responseFuture2
+ 		baz <- responseFuture3
  	} yield {
    	// Build a Result using foo, bar, and baz
+ 		Logger.info("Start of yield ")
  		Status(foo.status)(foo.body).as(foo.ahcResponse.getContentType)
  	}
  	Async(resultFuture)
