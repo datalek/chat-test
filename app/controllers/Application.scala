@@ -11,6 +11,12 @@ import models.chat._
 import models.users._
 import akka.actor._
 import scala.concurrent.duration._
+import play.api.libs.ws.WS
+import scala.concurrent.Future
+import play.api.libs.concurrent.Execution.Implicits._
+
+//import ExecutonContext.Implicit.global
+
 
 
 object Application extends Controller {
@@ -87,5 +93,56 @@ object Application extends Controller {
   def chat(conversation: String, username: String) = WebSocket.async[JsValue] { request =>
     Place.request(new User(username), conversation)
   } 
+  
+  def example0 = Action {
+    val responseFuture: Future[play.api.libs.ws.Response] = WS.url("http://example.com").get()
+    Logger.info("Before map")
+    val resultFuture: Future[Result] = responseFuture.map { resp =>
+      Logger.info("Within map")
+      // Create a Result that uses the http status, body, and content-type 
+      // from the example.com Response
+      Status(resp.status)(resp.body).as(resp.ahcResponse.getContentType)
+    }
+    Logger.info("After map")    
+    
+    Async(resultFuture)
+  }
+  
+  def example1 = Action {
+     // Make 3 sequential async calls
+    Logger.info("Before All")
+    val resultFuture = for {
+ 		foo <- WS.url("http://google.com").get()
+ 		bar <- WS.url("http://yahoo.com").get()
+ 		baz <- WS.url("http://merda.com").get()
+ 	} yield {
+   	// Build a Result using foo, bar, and baz
+ 		Status(foo.status)(foo.body).as(foo.ahcResponse.getContentType)
+ 	}
+ 	Async(resultFuture)
+  }
+  
+  /*
+   * // Make 3 sequential async calls
+   *	WS.url("http://foo.com").get().flatMap { foo =>
+   * 		WS.url("http://bar.com").get().flatMap { bar =>
+   *  			WS.url("http://baz.com").get().map { baz =>
+   *   			// Build a Result using foo, bar, and baz
+   *  				Ok(...)
+   *			}
+   *		}
+   *	}
+   */
+  
+  // Make 3 sequential async calls
+/*	for {
+ *		foo <- WS.url("http://foo.com").get()
+ *		bar <- WS.url("http://bar.com").get()
+ *		baz <- WS.url("http://baz.com").get()
+ *	} yield {
+ *  	// Build a Result using foo, bar, and baz
+ *  	Ok(...)
+ *	}
+*/
   
 }
