@@ -17,3 +17,16 @@ eclipse
 ~run
 clean
 exit
+ls
+eclipse
+clean
+~run
+eclipse
+exit
+eclipse
+cd ..
+exit
+~run
+run
+clean
+~run

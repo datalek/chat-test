@@ -18,7 +18,10 @@ GET		/room/:conversation/:username/chat	controllers.Application.chat(conversatio
 #GET     /room/chat                  controllers.Application.chat(username)
 GET		/test0						controllers.Application.example0
 GET		/test1						controllers.Application.example1
-
+GET		/test2						controllers.Application.example2
+GET		/test3						controllers.Application.example3
+GET		/test4						controllers.Application.example4
+GET		/test5						controllers.Application.example5
 
 
 # Map static resources from the /public folder to the /assets URL path

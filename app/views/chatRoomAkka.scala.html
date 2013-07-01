@@ -1,6 +1,6 @@
 @(username: String)(implicit request: RequestHeader)
 
-@main("Home")(views.html.navbar.navbar(Option(username))) {
+@main("Home")(views.html.navbar.navbar("rooms", Option(username))) {
     
     <div class="page-header">
         <h1>Welcome to the chat room <small>You are chatting as @username</small></h1>
